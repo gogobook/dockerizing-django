@@ -9,10 +9,12 @@ services:
       - front-tier
       - back-tier
     volumes:
-      - ./web:/app
-      - ./web/docker_django/static/:/www/static
+      - /home/lee/mysb/dockerizing-django3/web:/usr/src/app
+      - /home/lee/mysb/dockerizing-django3/web/static:/www/static
     env_file: .env
-    command: /usr/local/bin/gunicorn docker_django.wsgi:application -w 2 -b :8000
+    depends_on:
+       - postgres
+    command: /usr/local/bin/gunicorn web.wsgi:application -w 2 -b :8000
 
   nginx:
     build: ./nginx/.
