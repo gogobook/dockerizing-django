@@ -9,8 +9,8 @@ services:
       - front-tier
       - back-tier
     volumes:
-      - /home/lee/mysb/dockerizing-django3/web:/usr/src/app
-      - /home/lee/mysb/dockerizing-django3/web/static:/www/static
+      - /media/lee/78b3df3f-70e8-4101-b632-d3b341665d5f/dev/dockerizing-django-ng2/web:/usr/src/app
+      
     env_file: .env
     depends_on:
        - postgres
@@ -21,9 +21,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - /www/static
-    volumes_from:
-      - web
+      - /media/lee/78b3df3f-70e8-4101-b632-d3b341665d5f/dev/dockerizing-django-ng2/nginx/angular2:/usr/share/nginx/angular2
     networks:
       - front-tier
 
