@@ -1,4 +1,16 @@
+<<<<<<< HEAD
 Django==1.11
 gunicorn==19.7.1
 psycopg2==2.6.2
 redis==2.10.5   
+=======
+Django==1.10.5
+djangorestframework==3.5.3
+gunicorn==19.6.0
+psycopg2==2.6
+redis==2.10.3
+markdown
+django-filter
+django-guardian
+django-cors-headers
+>>>>>>> 8f62eceb285c6302d67798fb28969ea87e5ac202
