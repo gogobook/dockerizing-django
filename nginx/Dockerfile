@@ -1,3 +1,4 @@
-FROM tutum/nginx
-RUN rm /etc/nginx/sites-enabled/default
-ADD sites-enabled/ /etc/nginx/sites-enabled
+FROM nginx:alpine
+RUN apk add --update --no-cache nginx
+RUN rm /etc/nginx/conf.d/default.conf
+ADD conf.d/ /etc/nginx/conf.d
