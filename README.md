@@ -34,6 +34,7 @@ If you have old pgdata volume, remember delete it, or your will get errors.
 postgres_1  | FATAL:  database files are incompatible with server
 postgres_1  | DETAIL:  The data directory was initialized by PostgreSQL version 9.5, which is not compatible with this version 9.6.2.
 ```
+`docker-compose down` won't delete volumes! You should do it by manual.
 docker-compose.yml 中的volume的路徑要用絕對路徑。
 postgresql 要另建my_db
 
