@@ -2,15 +2,13 @@ version: '2'
 
 services:
   web:
-    build: ./web/.
+    build: ./web
     # container_name: web
-    expose:
-      - "8000"
     networks:
       - front-tier
       - back-tier
     volumes:
-      - /media/lee/78b3df3f-70e8-4101-b632-d3b341665d5f/dev/dockerizing-django-ng2/web:/usr/src/app
+      - /Users/mac/mycodebase/dockerizing-django/web:/usr/src/app
       
     env_file: .env
     depends_on:
@@ -18,11 +16,11 @@ services:
     command: /usr/local/bin/gunicorn web.wsgi:application -w 2 -b :8000
 
   nginx:
-    build: ./nginx/.
+    build: ./nginx
     ports:
       - "80:80"
     volumes:
-      - /media/lee/78b3df3f-70e8-4101-b632-d3b341665d5f/dev/dockerizing-django-ng2/nginx/angular2:/usr/share/nginx/angular2
+      - /Users/mac/mycodebase/dockerizing-django/nginx/angular2:/usr/share/nginx/angular2
     networks:
       - front-tier
 
