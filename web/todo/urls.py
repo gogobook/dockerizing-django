@@ -1,5 +1,5 @@
 from django.conf.urls import url
-# from rest_framework.urlpatterns import format_suffix_patterns
+from rest_framework.urlpatterns import format_suffix_patterns
 from todo import views
 
 urlpatterns = [
@@ -7,4 +7,4 @@ urlpatterns = [
     url(r'^product/(?P<pk>[0-9]+)$', views.ProductDetail.as_view()),
 ]
 
-# urlpatterns = format_suffix_patterns(urlpatterns) 
+urlpatterns = format_suffix_patterns(urlpatterns) 

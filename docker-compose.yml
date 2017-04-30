@@ -8,7 +8,7 @@ services:
       - front-tier
       - back-tier
     volumes:
-      - /Users/mac/mycodebase/dockerizing-django/web:/usr/src/app
+      - /media/lee/78b3df3f-70e8-4101-b632-d3b341665d5f/dev/dockerizing-django6/web:/usr/src/app
       
     env_file: .env
     depends_on:
@@ -20,7 +20,7 @@ services:
     ports:
       - "80:80"
     volumes:
-      - /Users/mac/mycodebase/dockerizing-django/nginx/angular2:/usr/share/nginx/angular2
+      - /media/lee/78b3df3f-70e8-4101-b632-d3b341665d5f/dev/dockerizing-django6/web/static:/static # 這裡把web (也就是django)的static files放在nginx中。
     networks:
       - front-tier
 
