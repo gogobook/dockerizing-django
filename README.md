@@ -19,6 +19,7 @@ Blog post -> https://realpython.com/blog/python/django-development-with-docker-c
 ### Ubuntu Instructions
 
 1. Start a python virtul environment, `pip install docker-compose`
+1. Point docker to VM (you may need to start the vm `docker-machine start dev`), `eval $(docker-machine env dev)`
 1. build images - `docker-compose build`
 1. Start services -`docker-compose up -d`
 1. Create Database in postgres -`psql -h 192.168.x.x -p 5432 -U postgres` `create database my_db` `\l` check List of databases.
